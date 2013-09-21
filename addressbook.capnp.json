@@ -1,0 +1,345 @@
+{
+    "nodes": [
+        {
+            "displayName": "addressbook.capnp:Person.PhoneNumber", 
+            "id": 9317543775882349264, 
+            "nestedNodes": [
+                {
+                    "id": 10511609358742521391, 
+                    "name": "Type"
+                }
+            ], 
+            "scopeId": 10988939875124296728, 
+            "struct": {
+                "dataWordCount": 1, 
+                "fields": [
+                    {
+                        "name": "number", 
+                        "ordinal": {
+                            "explicit": 0
+                        }, 
+                        "slot": {
+                            "defaultValue": {
+                                "text": ""
+                            }, 
+                            "type": {
+                                "text": null
+                            }
+                        }
+                    }, 
+                    {
+                        "codeOrder": 1, 
+                        "name": "type", 
+                        "ordinal": {
+                            "explicit": 1
+                        }, 
+                        "slot": {
+                            "defaultValue": {
+                                "enum": 0
+                            }, 
+                            "type": {
+                                "enum": {
+                                    "typeId": 10511609358742521391
+                                }
+                            }
+                        }
+                    }
+                ], 
+                "pointerCount": 1, 
+                "preferredListEncoding": "inlineComposite"
+            }
+        }, 
+        {
+            "annotations": [
+                {
+                    "id": 13386661402618388268, 
+                    "value": {
+                        "text": "capnp::annotations"
+                    }
+                }
+            ], 
+            "displayName": "capnp/c++.capnp", 
+            "file": null, 
+            "id": 13688829037717245569, 
+            "nestedNodes": [
+                {
+                    "id": 13386661402618388268, 
+                    "name": "namespace"
+                }
+            ]
+        }, 
+        {
+            "displayName": "addressbook.capnp:Person.employment", 
+            "displayNamePrefixLength": 25, 
+            "id": 13477914502553102653, 
+            "scopeId": 10988939875124296728, 
+            "struct": {
+                "dataWordCount": 1, 
+                "discriminantCount": 4, 
+                "discriminantOffset": 2, 
+                "fields": [
+                    {
+                        "discriminantValue": 0, 
+                        "name": "unemployed", 
+                        "ordinal": {
+                            "explicit": 4
+                        }, 
+                        "slot": {
+                            "defaultValue": {
+                                "void": null
+                            }, 
+                            "type": {
+                                "void": null
+                            }
+                        }
+                    }, 
+                    {
+                        "codeOrder": 1, 
+                        "discriminantValue": 1, 
+                        "name": "employer", 
+                        "ordinal": {
+                            "explicit": 5
+                        }, 
+                        "slot": {
+                            "defaultValue": {
+                                "text": ""
+                            }, 
+                            "offset": 3, 
+                            "type": {
+                                "text": null
+                            }
+                        }
+                    }, 
+                    {
+                        "codeOrder": 2, 
+                        "discriminantValue": 2, 
+                        "name": "school", 
+                        "ordinal": {
+                            "explicit": 6
+                        }, 
+                        "slot": {
+                            "defaultValue": {
+                                "text": ""
+                            }, 
+                            "offset": 3, 
+                            "type": {
+                                "text": null
+                            }
+                        }
+                    }, 
+                    {
+                        "codeOrder": 3, 
+                        "discriminantValue": 3, 
+                        "name": "selfEmployed", 
+                        "ordinal": {
+                            "explicit": 7
+                        }, 
+                        "slot": {
+                            "defaultValue": {
+                                "void": null
+                            }, 
+                            "type": {
+                                "void": null
+                            }
+                        }
+                    }
+                ], 
+                "isGroup": true, 
+                "pointerCount": 4, 
+                "preferredListEncoding": "inlineComposite"
+            }
+        }, 
+        {
+            "displayName": "addressbook.capnp:Person", 
+            "id": 10988939875124296728, 
+            "nestedNodes": [
+                {
+                    "id": 9317543775882349264, 
+                    "name": "PhoneNumber"
+                }
+            ], 
+            "scopeId": 11435534567900897652, 
+            "struct": {
+                "dataWordCount": 1, 
+                "fields": [
+                    {
+                        "name": "id", 
+                        "ordinal": {
+                            "explicit": 0
+                        }, 
+                        "slot": {
+                            "defaultValue": {
+                                "uint32": 0
+                            }, 
+                            "type": {
+                                "uint32": null
+                            }
+                        }
+                    }, 
+                    {
+                        "codeOrder": 1, 
+                        "name": "name", 
+                        "ordinal": {
+                            "explicit": 1
+                        }, 
+                        "slot": {
+                            "defaultValue": {
+                                "text": ""
+                            }, 
+                            "type": {
+                                "text": null
+                            }
+                        }
+                    }, 
+                    {
+                        "codeOrder": 2, 
+                        "name": "email", 
+                        "ordinal": {
+                            "explicit": 2
+                        }, 
+                        "slot": {
+                            "defaultValue": {
+                                "text": ""
+                            }, 
+                            "offset": 1, 
+                            "type": {
+                                "text": null
+                            }
+                        }
+                    }, 
+                    {
+                        "codeOrder": 3, 
+                        "name": "phones", 
+                        "ordinal": {
+                            "explicit": 3
+                        }, 
+                        "slot": {
+                            "defaultValue": {
+                                "list": "?"
+                            }, 
+                            "offset": 2, 
+                            "type": {
+                                "list": {
+                                    "elementType": {
+                                        "struct": {
+                                            "typeId": 9317543775882349264
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }, 
+                    {
+                        "codeOrder": 4, 
+                        "group": {
+                            "typeId": 13477914502553102653
+                        }, 
+                        "name": "employment"
+                    }
+                ], 
+                "pointerCount": 4, 
+                "preferredListEncoding": "inlineComposite"
+            }
+        }, 
+        {
+            "displayName": "addressbook.capnp:Person.PhoneNumber.Type", 
+            "enum": {
+                "enumerants": [
+                    {
+                        "name": "mobile"
+                    }, 
+                    {
+                        "codeOrder": 1, 
+                        "name": "home"
+                    }, 
+                    {
+                        "codeOrder": 2, 
+                        "name": "work"
+                    }
+                ]
+            }, 
+            "id": 10511609358742521391, 
+            "nestedNodes": [], 
+            "scopeId": 9317543775882349264
+        }, 
+        {
+            "annotation": {
+                "targetsFile": true, 
+                "type": {
+                    "text": null
+                }
+            }, 
+            "displayName": "capnp/c++.capnp:namespace", 
+            "id": 13386661402618388268, 
+            "nestedNodes": [], 
+            "scopeId": 13688829037717245569
+        }, 
+        {
+            "displayName": "addressbook.capnp:AddressBook", 
+            "id": 17957216978475721012, 
+            "nestedNodes": [], 
+            "scopeId": 11435534567900897652, 
+            "struct": {
+                "fields": [
+                    {
+                        "name": "people", 
+                        "ordinal": {
+                            "explicit": 0
+                        }, 
+                        "slot": {
+                            "defaultValue": {
+                                "list": "?"
+                            }, 
+                            "type": {
+                                "list": {
+                                    "elementType": {
+                                        "struct": {
+                                            "typeId": 10988939875124296728
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ], 
+                "pointerCount": 1, 
+                "preferredListEncoding": "pointer"
+            }
+        }, 
+        {
+            "annotations": [
+                {
+                    "id": 13386661402618388268, 
+                    "value": {
+                        "text": "addressbook"
+                    }
+                }
+            ], 
+            "displayName": "addressbook.capnp", 
+            "file": null, 
+            "id": 11435534567900897652, 
+            "nestedNodes": [
+                {
+                    "id": 10988939875124296728, 
+                    "name": "Person"
+                }, 
+                {
+                    "id": 17957216978475721012, 
+                    "name": "AddressBook"
+                }
+            ]
+        }
+    ], 
+    "requestedFiles": [
+        {
+            "filename": "addressbook.capnp", 
+            "id": 11435534567900897652, 
+            "imports": [
+                {
+                    "id": 13688829037717245569, 
+                    "name": "/capnp/c++.capnp"
+                }
+            ]
+        }
+    ]
+}
