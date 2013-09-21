@@ -28,7 +28,7 @@ void dynamicPrintValue(DynamicValue::Reader value) {
 
   switch (value.getType()) {
     case DynamicValue::VOID:
-      std::cout << "";
+      std::cout << "null";
       break;
     case DynamicValue::BOOL:
       std::cout << (value.as<bool>() ? "true" : "false");
@@ -74,7 +74,14 @@ void dynamicPrintValue(DynamicValue::Reader value) {
       auto structValue = value.as<DynamicStruct>();
       bool first = true;
       for (auto field: structValue.getSchema().getFields()) {
-        if (!structValue.has(field)) continue;
+        KJ_IF_MAYBE(w, structValue.which()) {
+          if (w->getProto().getName() != field.getProto().getName() &&
+              !structValue.has(field)) {
+            continue;
+          }
+        } else {
+          if (!structValue.has(field)) continue;
+        }
         if (first) {
           first = false;
         } else {
@@ -89,7 +96,7 @@ void dynamicPrintValue(DynamicValue::Reader value) {
     }
     default:
       // There are other types, we aren't handling them.
-      std::cout << "?";
+      std::cout << "\"?\"";
       break;
   }
 }
