@@ -73,6 +73,9 @@ void dynamicPrintValue(DynamicValue::Reader value) {
       std::cout << "{";
       auto structValue = value.as<DynamicStruct>();
       bool first = true;
+      KJ_IF_MAYBE(w, structValue.which()) {
+        std::cout << "\"which\" : \"" << w->getProto().getName().cStr() << "\", ";
+      }
       for (auto field: structValue.getSchema().getFields()) {
         KJ_IF_MAYBE(w, structValue.which()) {
           if (w->getProto().getName() != field.getProto().getName() &&
